@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, FlatList, Switch, StyleSheet } from 'react-native';
+import ThemeContext from '../ThemeContext';
 
 // Mock data for consent requests
 const mockConsentRequests = [
@@ -30,16 +31,18 @@ const ConsentRequestScreen = () => {
 
         // Implement additional logic after updating consent (e.g., feedback to user)
     };
+    
+    const { theme } = useContext(ThemeContext);
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>My Consent Requests</Text>
+        <View style={[styles.container, { backgroundColor: theme.backgroundColor }]}>
+            <Text style={[styles.title, { color: theme.textColor }]}>My Consent Requests</Text>
             <FlatList
                 data={consentRequests}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.itemContainer}>
-                        <Text style={styles.itemText}>{item.name}</Text>
+                        <Text style={[styles.itemText, { color: theme.textColor }]}>{item.name}</Text>
                         <Switch
                             trackColor={{ false: "#767577", true: "#81b0ff" }}
                             thumbColor={item.granted ? "#f5dd4b" : "#f4f3f4"}
@@ -57,13 +60,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: '#F5F5F5',
     },
     title: {
         fontSize: 22,
         fontWeight: 'bold',
         marginBottom: 20,
-        color: '#333',
     },
     itemContainer: {
         flexDirection: 'row',
