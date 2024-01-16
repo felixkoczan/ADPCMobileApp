@@ -8,7 +8,7 @@ import SettingsScreen from './Screens/SettingsScreen';
 import ThemeProvider from './ThemeProvider'; // Import the ThemeProvider
 
 const App = () => {
-    return ( 
+    return (
         <NavigationContainer>
             <ThemeProvider>
                 <AppNavigation />
