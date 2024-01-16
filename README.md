@@ -29,15 +29,15 @@ Clone the repository and install the dependencies.
 
 git clone https://github.com/felixkoczan/ADPCMobileApp.git
 
-# Navigate to the project directory
+### Navigate to the project directory
 
 cd your-project-directory
 
-# Install dependencies
+### Install dependencies
 
 npm install
 
-# If you're using Yarn, use the following command instead
+### If you're using Yarn, use the following command instead
 
 yarn install
 
@@ -60,9 +60,13 @@ npm run android
 ## Screens
 
 HomeScreen: The landing screen of the app.
+
 DeviceRegistrationScreen: Allows users to register new devices.
+
 ConsentRequestScreen: Displays a list of consent requests that users can toggle.
+
 SettingsScreen: Where users can switch themes and manage other settings.
+
 AboutScreen: Provides information about the app.
 
 ## Data Persistence with AsyncStorage
