@@ -9,6 +9,8 @@ import {
   ToastAndroid,
   Alert,
   StyleSheet,
+  Keyboard, 
+  TouchableWithoutFeedback
 } from 'react-native';
 
 const CombinedScreen = ({ navigation }) => {
@@ -54,6 +56,7 @@ const CombinedScreen = ({ navigation }) => {
     navigation.navigate('Home');
   };
   return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
     <View style={[styles.container, { backgroundColor: theme.backgroundColor }]}>
       <TextInput
         style={[styles.input, { color: theme.textColor, backgroundColor: theme.inputBackgroundColor }]}
@@ -91,6 +94,7 @@ const CombinedScreen = ({ navigation }) => {
         <Text style={[styles.buttonText, { color: theme.buttonTextColor }]}>Add Device</Text>
       </TouchableOpacity>
     </View>
+    </TouchableWithoutFeedback>
   );
 };
 

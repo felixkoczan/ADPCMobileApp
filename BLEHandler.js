@@ -1,3 +1,4 @@
+/*
 import { BleManager } from 'react-native-ble-plx';
 import { EventEmitter } from 'events';
 

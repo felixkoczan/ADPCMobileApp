@@ -34,7 +34,7 @@ const SettingsScreen = () => {
     });
 
     const [darkModeSetting, setDarkModeSetting] = useState(false);
-    const [deletionSetting, setDeletionSetting] = useState(false);
+    const [cloudSetting, setCloudSetting] = useState(false);
     const [notificationSetting, setNotificationSetting] = useState(false);
 
     // Update to use useCallback for a stable function reference
@@ -70,12 +70,12 @@ const SettingsScreen = () => {
                 />
             </View>
             <View style={styles.setting}>
-                <Text style={styles.settingText}>Delete my Consents</Text>
+                <Text style={styles.settingText}>Store my Data in Next Cloud</Text>
                 <Switch
-                    value={deletionSetting}
-                    onValueChange={setDeletionSetting}
+                    value={cloudSetting}
+                    onValueChange={setCloudSetting}
                     trackColor={{ false: "#767577", true: "#81b0ff" }}
-                    thumbColor={deletionSetting ? "#f5dd4b" : "#f4f3f4"}
+                    thumbColor={cloudSetting ? "#f5dd4b" : "#f4f3f4"}
                 />
             </View>
         </View>
